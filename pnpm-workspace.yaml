@@ -1,0 +1,5 @@
+packages: []
+
+# esbuild 需要执行安装脚本才能落地平台二进制（VitePress 的构建依赖）
+allowBuilds:
+  esbuild: true

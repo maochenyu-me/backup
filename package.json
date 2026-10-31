@@ -1,0 +1,21 @@
+{
+  "name": "setup-handbook",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.8.1",
+  "description": "换机手册 — 电脑环境与软件的迁移、备份交接单",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "skills": "node scripts/gen-skills.mjs",
+    "verify:links": "node scripts/check-links.mjs"
+  },
+  "devDependencies": {
+    "@iconify-json/simple-icons": "^1.2.101",
+    "vitepress": "1.6.4",
+    "vitepress-plugin-group-icons": "^1.8.1",
+    "vue": "^3.5.44"
+  }
+}

@@ -1,0 +1,155 @@
+/* ─────────────────────────────────────────────────────────────
+   首页：左对齐双栏 + 右侧就绪清单。刻意不用默认的居中 hero。
+   ───────────────────────────────────────────────────────────── */
+
+.VPHero .container {
+  max-width: 100%;
+}
+
+/* 收掉默认 hero 的渐变背景与大标题间距 */
+.VPHero .main {
+  padding: 0;
+}
+
+.VPHome {
+  padding-bottom: 0;
+}
+
+/* ── 自定义首页主体 ──────────────────────────────────────── */
+
+.masthead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 22rem);
+  gap: 3rem clamp(2rem, 6vw, 5rem);
+  align-items: start;
+  padding: clamp(3rem, 8vh, 5.5rem) 0 clamp(2.5rem, 6vh, 4rem);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .masthead {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+  }
+}
+
+.masthead__name {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.masthead__lede {
+  max-width: 32em;
+  margin: 0 0 1.5rem;
+  font-size: var(--step-2);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.masthead__note {
+  max-width: 34em;
+  margin: 0 0 1.75rem;
+  font-size: var(--step-0);
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+/* 首页的两条入口：只用文字加下划线，不用按钮块 */
+.masthead__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step-0);
+}
+
+.masthead__links li {
+  margin: 0;
+}
+
+.masthead__links a {
+  color: var(--signal);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--signal) 40%, transparent);
+  padding-bottom: 1px;
+  transition: border-color 0.15s;
+}
+
+.masthead__links a:hover {
+  border-bottom-color: var(--signal);
+}
+
+.masthead__meta {
+  margin: 1.75rem 0 0;
+  font-size: var(--step--1);
+  color: var(--ink-faint);
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 右侧清单：标题 + 状态列表 */
+.panel__title {
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
+}
+
+/* ── 首页的表格区 ────────────────────────────────────────── */
+
+.home-section {
+  padding: clamp(2.5rem, 6vh, 4rem) 0 0;
+}
+
+.home-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 1rem;
+}
+
+.home-section__title {
+  margin: 0;
+  font-size: var(--step-1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.home-section__more {
+  font-size: var(--step--1);
+  color: var(--signal);
+  text-decoration: none;
+}
+
+.home-section__more:hover {
+  text-decoration: underline;
+}
+
+/* ── 首页底部说明 ────────────────────────────────────────── */
+
+.home-foot {
+  margin: clamp(3rem, 7vh, 5rem) 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line);
+  font-size: var(--step--1);
+  color: var(--ink-faint);
+  line-height: 1.8;
+}
+
+.home-foot p {
+  margin: 0.35rem 0;
+}

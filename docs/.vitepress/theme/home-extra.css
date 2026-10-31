@@ -1,0 +1,38 @@
+/* 首页用自定义 masthead，隐藏默认 hero 与 features */
+.VPHero,
+.VPFeatures {
+  display: none;
+}
+
+/* 首页清单序号 */
+.vp-doc .checklist__idx {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+/* 首页表格与正文链接不加下划线（home-wrap 本身就是 .vp-doc 元素） */
+.vp-doc.home-wrap a {
+  text-decoration: none;
+  color: var(--signal);
+}
+
+.vp-doc.home-wrap a:hover {
+  text-decoration: underline;
+}
+
+.vp-doc.home-wrap table a:hover {
+  text-decoration: underline;
+}
+
+/* 首页容器留出上下呼吸 */
+.vp-doc.home-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 收掉 VPHome 自带的大外边距 */
+.VPHome {
+  margin-bottom: 0;
+}
