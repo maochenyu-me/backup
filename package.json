@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=10"
+  },
   "description": "换机手册 — 电脑环境与软件的迁移、备份交接单",
   "scripts": {
     "dev": "vitepress dev docs",

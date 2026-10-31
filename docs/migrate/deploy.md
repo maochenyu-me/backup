@@ -129,7 +129,7 @@ python -m http.server 8080
 npx http-server docs\.vitepress\dist -p 8080
 ```
 
-```bash [macOS（Linux） ~simple-icons:apple~]
+```bash [macOS / Linux]
 cd docs/.vitepress/dist
 python3 -m http.server 8080
 ```
@@ -138,14 +138,19 @@ python3 -m http.server 8080
 
 然后浏览器打开 `http://localhost:8080`。
 
-::: tip 想双击就能开的话
-把 `base` 设成 `./`，VitePress 会生成相对路径的链接：
+::: tip 想双击 index.html 就能看的话
+要同时满足两个条件：相对路径 + 带 .html 的链接。
 
 ```powershell
-$env:DOCS_BASE="./"; pnpm build
+$env:DOCS_BASE="./"
+$env:DOCS_CLEAN_URLS="false"
+pnpm build
 ```
 
-代价是 hash 路由和部分功能可能异常，只建议给离线包用。
+第一条把资源与站内链接改成相对路径，第二条关掉 cleanUrls（否则链接是
+`./guide/order` 而文件实际叫 `order.html`，双击会 404）。
+
+代价：搜索索引和部分 SPA 跳转在 `file://` 下可能异常。只给离线包用，别拿去部署。
 :::
 
 ## 构建验证

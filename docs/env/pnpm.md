@@ -43,7 +43,7 @@ corepack prepare pnpm@latest --activate
 brew install pnpm
 ```
 
-```bash [macOS（Linux / npm） ~simple-icons:apple~]
+```bash [macOS / Linux（npm）]
 npm install -g pnpm@latest
 ```
 

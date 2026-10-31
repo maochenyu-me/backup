@@ -4,6 +4,8 @@ import site from './site.config.mts'
 
 export default defineConfig(() => {
   const base = process.env.DOCS_BASE || site.base
+  // 离线包（file:// 直接双击）需要带 .html 的链接，设 DOCS_CLEAN_URLS=false
+  const cleanUrls = process.env.DOCS_CLEAN_URLS !== 'false'
 
   return {
     lang: site.lang,
@@ -12,7 +14,7 @@ export default defineConfig(() => {
     description: site.description,
 
     base,
-    cleanUrls: true,
+    cleanUrls,
     lastUpdated: true,
     appearance: true,
 
