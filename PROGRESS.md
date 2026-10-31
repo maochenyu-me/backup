@@ -189,7 +189,22 @@ node "$env:SKILL_DIR\run.js" "E:\CSharp\Temp\opencode\vp-audit.cjs"
 ## 8. 提交历史
 
 ```
+11a1362  docs: add progress handoff; fix multi-platform code labels, offline build flags, robots
 712479e  feat: setup handbook vitepress site
 ```
 
 工作区干净，`node_modules` / `dist` / `cache` 已在 `.gitignore` 里。
+
+### 第二轮补做的事（本次）
+
+- 修正 code-group 标签批量替换的副作用：`[macOS / Linux]` 曾被压成 `macOS（Linux）`，
+  丢失"双平台"语义；跨平台标签现在不带单平台图标（图标只在单平台标签上用）
+- `cleanUrls` 改为可切换：`DOCS_CLEAN_URLS=false` 供离线包使用
+  （开着 cleanUrls 时链接是 `./guide/order` 而文件叫 `order.html`，`file://` 会 404）
+- 新增 `docs/public/robots.txt`，全站禁止收录（个人环境清单，降低暴露面）
+- `package.json` 加 `engines`（node >=20.19, pnpm >=10）
+- 已验证三种构建形态：
+  - 默认根路径：资源为 `/assets/`
+  - GH Pages 子路径 `DOCS_BASE=/setup-handbook/`：资源与 favicon 均带前缀，残留 0
+  - 离线相对 `DOCS_BASE=./`：资源与站内链接均为 `./` 开头
+
