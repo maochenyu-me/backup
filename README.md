@@ -72,6 +72,10 @@ scripts/
 
 `base` 通过环境变量 `DOCS_BASE` 控制，见 `docs/.vitepress/config.mts`。
 
+pnpm 版本只在 `package.json` 的 `packageManager` 字段写一处（当前 `pnpm@12.8.1`）。`deploy.yml` 里
+**不要**再给 `pnpm/action-setup` 传 `version` —— 两处同时指定会直接报
+`Multiple versions of pnpm specified`（`ERR_PNPM_BAD_PM_VERSION`），CI 在装依赖前就挂掉。
+
 ## 设计约定
 
 - **一个强调色**（信号青 `#0E7C86`，暗色 `#3FBFB0`）只表达「可点击」；琥珀色只表达「需注意」
