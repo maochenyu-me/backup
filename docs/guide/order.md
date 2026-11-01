@@ -38,8 +38,13 @@
 <div class="timeline__head">包管理器</div>
 <div class="timeline__body">
 
-Windows 用 `winget`（Win11 自带，Win10 需装 App Installer）。这一步只装包管理器本身，
-不装软件。装好后 `winget --version` 有输出就过了。
+Windows 用 [winget](/env/winget)（Win11 自带，Win10 多数自带，LTSC / 精简版需装 App Installer）。
+这一步只装包管理器本身，不装软件。装好后 `winget --version` 有输出就过了。
+
+::: tip Win11 用户大概率什么都不用做
+先跑 `winget --version`。有版本号就跳过这一步，别为了「按流程走」去重装一遍。
+只有 LTSC、Server、砍掉 Store 的精简版才真的要装，装法见 [winget](/env/winget#装)。
+:::
 
 后续所有 Windows 软件都通过它安装，好处是"装的是什么版本、从哪装的"有据可查。
 
@@ -131,7 +136,7 @@ FlClash 的配置与订阅、以及各个 skills 目录。
 ::: code-group
 
 ```powershell [Windows ~simple-icons:windows11~]
-node -v; npm -v; pnpm -v; git --version; hugo version; hexo -v
+winget --version; node -v; npm -v; pnpm -v; git --version; hugo version; hexo -v
 ```
 
 ```bash [macOS ~simple-icons:apple~]

@@ -8,21 +8,37 @@
   <dl class="spec">
     <dt>前置</dt><dd>已完成 [备份清单](/migrate/backup)</dd>
     <dt>耗时</dt><dd>1–2 小时（含下载）</dd>
-    <dt>最近核对</dt><dd>2026-10-31</dd>
+    <dt>最近核对</dt><dd>2026-11-01</dd>
   </dl>
 </div>
 
 ## 顺序为什么不能反
 
 ```
-代理  →  Git  →  Node  →  pnpm  →  Hugo/Hexo  →  AI 工具  →  配置
-  ↑                                          ↑
-必须最先                                  配置里可能有代理地址
+winget  →  代理  →  Git  →  Node  →  pnpm  →  Hugo/Hexo  →  AI 工具  →  配置
+            ↑                                          ↑
+        必须最先                                  配置里可能有代理地址
 ```
 
 - 代理不先装，Git 和 Node 的下载会卡死
 - Git 不在 Node 前，npm 从 GitHub 拉包会失败
 - 配置不最后放，因为配置里引用了前面装的软件
+
+## 第 0 步：确认 winget
+
+后面几乎每一步都是 `winget install`，所以先确认它在：
+
+```powershell
+winget --version
+```
+
+Win11 和较新的 Win10 自带，什么都不用做。没有输出就是缺 App Installer 组件，
+按 [winget · 装](/env/winget#装) 里的三种情况选一种装上（LTSC 走 MSIX，精简版走一行 bootstrap）。
+
+::: warning 别把自己锁死
+如果 **winget 没有、代理也还没装**，那 `winget install -e --id chen08209.FlClash` 这条直接不可用。
+这种情况先去 FlClash 官网手动下安装包把网搞通，再回头补 winget —— 顺序上用户态的网络永远优先。
+:::
 
 ## 第 1 步：代理
 

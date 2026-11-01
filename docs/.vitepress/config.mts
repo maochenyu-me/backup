@@ -86,6 +86,7 @@ export default defineConfig(() => {
           text: '基础环境',
           items: [
             { text: '总览', link: '/env/' },
+            { text: 'winget', link: '/env/winget' },
             { text: 'Node.js', link: '/env/nodejs' },
             { text: 'npm', link: '/env/npm' },
             { text: 'pnpm', link: '/env/pnpm' },

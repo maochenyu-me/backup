@@ -16,6 +16,7 @@
 
 | 名称 | 本机版本 | 安装来源 | 安装位置 |
 | --- | --- | --- | --- |
+| winget | `v1.29.380` | 系统自带（App Installer `1.29.379.0`） | `%LOCALAPPDATA%\Microsoft\WindowsApps` |
 | Node.js | `24.21.0` | `winget` (`OpenJS.NodeJS.LTS`) | `C:\Program Files\nodejs` |
 | npm | `12.2.0` | 随 Node 附带 | 同上 |
 | pnpm | `12.8.1` | `npm i -g` | `%APPDATA%\npm` |
@@ -70,7 +71,7 @@
 
 ```powershell [Windows ~simple-icons:windows11~]
 node -v; npm -v; pnpm -v; git --version; hugo version; hexo -v; corepack -v
-winget list | Select-String "Chrome|Git|Node|Hugo|Steam|Clash|WorkBuddy|Python|PowerShell"
+winget --version; winget list | Select-String "Chrome|Git|Node|Hugo|Steam|Clash|WorkBuddy|Python|PowerShell"
 ```
 
 ```bash [macOS ~simple-icons:apple~]

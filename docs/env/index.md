@@ -1,13 +1,13 @@
 # 基础环境
 
-七个东西，装完就有完整的本地开发能力。按依赖关系排的，从上往下装。
+装完就有完整的本地开发能力。按依赖关系排的，从上往下装。
 
 <div class="filmhead">
-  <div class="filmhead__title">基础环境总览 <span class="badge">7 项</span></div>
-  <p class="filmhead__lede">Node 系三个 + Git + 两个静态站生成器。</p>
+  <div class="filmhead__title">基础环境总览 <span class="badge">9 项</span></div>
+  <p class="filmhead__lede">winget + Git + Node 系三个 + 两个静态站生成器，其余随附或可选。</p>
   <dl class="spec">
-    <dt>依赖顺序</dt><dd>Git → Node → npm → pnpm → Hugo / Hexo</dd>
-    <dt>最近核对</dt><dd>2026-10-31</dd>
+    <dt>依赖顺序</dt><dd>winget → Git → Node → npm → pnpm → Hugo / Hexo</dd>
+    <dt>最近核对</dt><dd>2026-11-01</dd>
   </dl>
 </div>
 
@@ -15,6 +15,7 @@
 
 | 名称 | 本机版本 | 装它干嘛 | 必须吗 |
 | --- | --- | --- | --- |
+| [winget](/env/winget) | `v1.29.380` | Windows 包管理器，后面大部分软件都靠它装 | 必须（Windows） |
 | [Git](/env/git) | `2.56.0` | 版本控制，也是 npm 拉 GitHub 包的前提 | 必须 |
 | [Node.js](/env/nodejs) | `24.21.0` | 跑一切 JS 工具 | 必须 |
 | [npm](/env/npm) | `12.2.0` | 随 Node 附带，包管理 | 必须 |
@@ -28,6 +29,7 @@
 
 | 顺序 | 原因 |
 | --- | --- |
+| winget 在最前（仅 Windows） | 后面 Git、Node、Hugo 等大多直接用它装；没有它每一步都得手动去官网下载 |
 | Git 在 Node 前 | npm 从 GitHub 拉包、Hugo 主题、Hexo 主题都走 git 协议 |
 | Node 在 npm/pnpm 前 | npm 随 Node 捆绑，pnpm 的 npm 安装方式需要 Node |
 | Node 在 Hexo 前 | Hexo 是 npm 全局包 |

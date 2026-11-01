@@ -99,6 +99,9 @@ Copy-Item "$env:APPDATA\com.follow\clash" "$dest\flclash" -Recurse -ErrorAction 
 # 全局包清单
 npm ls -g --depth=0 > "$dest\npm-globals.txt"
 
+# 已装软件清单（换机时能自动装回一部分，见 /env/winget#备份与还原）
+winget export -o "$dest\winget-apps.json" --include-versions
+
 Write-Output "备份完成: $dest"
 ```
 
