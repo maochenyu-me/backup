@@ -14,12 +14,15 @@
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
     "skills": "node scripts/gen-skills.mjs",
-    "verify:links": "node scripts/check-links.mjs"
+    "verify:links": "node scripts/check-links.mjs",
+    "verify:theme": "node scripts/check-theme.mjs",
+    "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.2.101",
     "vitepress": "1.6.4",
     "vitepress-plugin-group-icons": "^1.8.1",
+    "vitepress-theme-teek": "1.6.2",
     "vue": "^3.5.44"
   }
 }

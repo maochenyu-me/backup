@@ -1,0 +1,24 @@
+/* The theme owns typography and controls; only the reading surface is adapted. */
+.VPDoc .content-container { min-width: 0; }
+.VPDoc .vp-doc { font-size: 16px; }
+.VPDoc .vp-doc table { max-width: 100%; overflow-x: auto; }
+.VPDoc .vp-doc :not(pre) > code { overflow-wrap: anywhere; }
+.VPSidebarItem.is-active > .item { background: var(--vp-c-brand-soft); border-radius: 6px; }
+@media (min-width: 960px) {
+  .VPDoc .content-container {
+    padding: 32px;
+    border: 1px solid var(--vp-c-divider);
+    border-radius: 12px;
+    background: var(--surface);
+  }
+  .VPDoc .content { min-width: 0; }
+}
+:where(a, button, input):focus-visible { outline: 2px solid var(--vp-c-brand-1); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

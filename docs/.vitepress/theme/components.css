@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────
    站内组件：胶片头、定义列表、版本徽标、时间线、状态清单
-   全部是排版部件，无卡片、无阴影。
+   仅业务排版部件；正文基础样式交给主题。
    ───────────────────────────────────────────────────────────── */
 
 /* ── 软件页「胶片头」 ─────────────────────────────────────── */
@@ -50,7 +50,7 @@
   color: var(--ink-soft);
   background: var(--line-soft);
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: 6px;
   vertical-align: 0.12em;
   white-space: nowrap;
 }
@@ -65,9 +65,10 @@
 
 .spec {
   display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.4rem 1.25rem;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.65rem 1.25rem;
   margin: 0;
+  padding: 1rem 0;
   font-size: var(--step--1);
 }
 
@@ -162,227 +163,4 @@
 
 .timeline__body > p {
   margin: 0.4rem 0;
-}
-
-/* ── 首页：右侧就绪清单 ──────────────────────────────────── */
-
-/* VitePress 给 .vp-doc ul 上 list-style 和缩进，特异性压过裸类名，这里对齐 */
-.vp-doc ul.checklist,
-.vp-doc ul.masthead__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.vp-doc ul.checklist > li,
-.vp-doc ul.masthead__links > li {
-  list-style: none;
-  margin: 0;
-}
-
-.checklist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: var(--step--1);
-}
-
-.checklist > li {
-  margin: 0;
-  border-bottom: 1px solid var(--line-soft);
-}
-
-.checklist > li:last-child {
-  border-bottom: none;
-}
-
-.checklist a,
-.checklist span {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0;
-  color: var(--ink);
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.checklist a:hover {
-  color: var(--signal);
-}
-
-.checklist a::after {
-  content: "";
-  margin-left: auto;
-  width: 1em;
-  text-align: right;
-  color: var(--ink-faint);
-  font-family: var(--mono);
-}
-
-/* 空心圆点：待办状态，不是装饰 */
-.checklist a::before {
-  content: "";
-  flex: none;
-  width: 7px;
-  height: 7px;
-  border: 1px solid var(--ink-faint);
-  border-radius: 50%;
-  transition: border-color 0.2s;
-}
-
-.checklist a:hover::before {
-  border-color: var(--signal);
-  background: var(--signal);
-}
-
-/* ── 表格：全站统一成清单样式，不要默认的斑马纹 ──────────── */
-
-/* VitePress 用 .vp-doc tr:nth-child(2n) 上斑马纹，这里压掉 */
-.vp-doc tr:nth-child(2n),
-.vp-doc tr:nth-child(2n + 1),
-.vp-doc thead tr:nth-child(2n) {
-  background-color: transparent;
-}
-
-.vp-doc table {
-  display: table;
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.25rem 0;
-  font-size: var(--step--1);
-}
-
-.vp-doc tr {
-  background: transparent;
-  border-top: none;
-}
-
-.vp-doc th,
-.vp-doc td {
-  padding: 0.5rem 0.75rem 0.5rem 0;
-  border: none;
-  border-bottom: 1px solid var(--line-soft);
-  text-align: left;
-  vertical-align: top;
-}
-
-.vp-doc th {
-  color: var(--ink-faint);
-  font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
-  border-bottom: 1px solid var(--line);
-  white-space: nowrap;
-}
-
-.vp-doc td code {
-  font-size: 0.8125rem;
-  font-variant-numeric: tabular-nums;
-}
-
-/* 表格里的版本号/数字列右对齐 */
-.vp-doc th.num,
-.vp-doc td.num {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-/* ── 提示块：只保留两种语气 ──────────────────────────────── */
-
-.vp-doc .custom-block {
-  border: none;
-  border-left: 2px solid var(--line);
-  border-radius: 0;
-  background: transparent;
-  padding: 0 0 0 1rem;
-  margin: 1.5rem 0;
-  font-size: var(--step-0);
-}
-
-.vp-doc .custom-block .custom-block-title {
-  font-weight: 600;
-  font-size: var(--step--1);
-  color: var(--ink);
-  margin-bottom: 0.25rem;
-}
-
-.vp-doc .custom-block.warning {
-  border-left-color: var(--warn);
-  color: var(--ink-soft);
-}
-
-.vp-doc .custom-block.warning .custom-block-title {
-  color: var(--warn);
-}
-
-.vp-doc .custom-block.tip,
-.vp-doc .custom-block.info {
-  border-left-color: var(--signal);
-  color: var(--ink-soft);
-}
-
-.vp-doc .custom-block.tip .custom-block-title,
-.vp-doc .custom-block.info .custom-block-title {
-  color: var(--signal-ink);
-}
-
-.vp-doc .custom-block.danger {
-  border-left-color: var(--warn);
-  color: var(--ink-soft);
-}
-
-.vp-doc .custom-block.danger .custom-block-title {
-  color: var(--warn);
-}
-
-/* ── 正文排版微调 ────────────────────────────────────────── */
-
-.vp-doc h2 {
-  margin-top: 3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--line);
-  font-size: var(--step-2);
-  letter-spacing: -0.015em;
-  font-weight: 600;
-}
-
-.vp-doc h3 {
-  margin-top: 2rem;
-  font-size: var(--step-1);
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-
-.vp-doc p,
-.vp-doc li {
-  line-height: 1.75;
-}
-
-/* 行内代码不用底色块，只用等宽 + 细线，降低视觉噪音 */
-.vp-doc :not(pre) > code {
-  padding: 0.1em 0.35em;
-  font-size: 0.85em;
-  color: var(--ink);
-  background: var(--line-soft);
-  border: none;
-  border-radius: 2px;
-  font-variant-numeric: tabular-nums;
-}
-
-.dark .vp-doc :not(pre) > code {
-  background: var(--line-soft);
-}
-
-/* ── 减少动效 ────────────────────────────────────────────── */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
 }

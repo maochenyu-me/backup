@@ -3,7 +3,7 @@
    ─────────────────────────────────────────────────────────────
    一个颜色语义只有两个：可点击 (signal)、需注意 (warn)。
    其余全是中性灰阶。信息密度靠字重、字号、等宽数字建立，
-   不靠彩色分类、不靠卡片、不靠圆角阴影。
+   内容面与间距提供层次，不使用装饰性渐变。
    ───────────────────────────────────────────────────────────── */
 
 :root {
@@ -31,7 +31,7 @@
 
   /* 站点自有的排版尺度 */
   --step--1: 0.8125rem;
-  --step-0: 0.9375rem;
+  --step-0: 1rem;
   --step-1: 1.0625rem;
   --step-2: 1.5rem;
   --step-3: 2rem;
@@ -81,9 +81,9 @@
     "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
   --vp-font-family-mono: var(--mono);
 
-  /* 全站零圆角：设备交接单不该是圆角 */
-  --vp-code-block-radius: 2px;
-  --vp-border-radius: 2px;
+  /* 文档保持克制，交互与内容面使用适度圆角。 */
+  --vp-code-block-radius: 6px;
+  --vp-border-radius: 8px;
 
   --vp-sidebar-width: 260px;
   --vp-layout-max-width: 1520px;
@@ -102,15 +102,4 @@
   --vp-c-brand-1: var(--signal);
   --vp-c-brand-2: var(--signal-ink);
   --vp-c-brand-3: var(--signal);
-}
-
-/* 代码块底色也压平，避免默认的蓝灰感与色板打架 */
-:root {
-  --vp-code-block-bg: #f2f4f7;
-  --vp-code-tab-bg: transparent;
-  --vp-code-tab-active-bar-color: var(--signal);
-}
-
-.dark {
-  --vp-code-block-bg: #12161c;
 }

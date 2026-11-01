@@ -1,5 +1,7 @@
 # 换机手册
 
+> **目前仅供自用。** 本指南记录个人电脑的实际环境与换机流程，不是面向公众的通用安装教程；版本、路径和配置选择均以个人环境为准，不保证适用于其他机器。密钥、令牌等敏感信息仍不写入文档。
+
 一份给自己用的换机交接单：记录电脑基础环境与常用软件的**版本、装法、配置路径、备份还原方法**。
 新机器到手照着 [换机顺序](docs/guide/order.md) 走一遍；老机器退役前照着 [备份清单](docs/migrate/backup.md) 把该拷的拷走。
 
@@ -33,7 +35,7 @@ docs/
 │       └── Home.vue         首页内容
 ├── guide/                   换机顺序、版本快照、使用说明
 ├── env/                     Node.js / npm / pnpm / Git / Hugo / Hexo
-├── apps/                    Chrome / FlClash / Steam / OpenCode / WorkBuddy / 顺带项
+├── apps/                    Chrome / FlClash / Steam / DSH / DSH-TUI / OpenCode / WorkBuddy / 顺带项
 ├── migrate/                 备份清单 / 密钥与脱敏 / 恢复演练 / 部署本站
 └── public/logo.svg
 

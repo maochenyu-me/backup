@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 import site from './site.config.mts'
+import teekConfig from './teek.config.mts'
 
 export default defineConfig(() => {
   const base = process.env.DOCS_BASE || site.base
@@ -8,15 +9,25 @@ export default defineConfig(() => {
   const cleanUrls = process.env.DOCS_CLEAN_URLS !== 'false'
 
   return {
+    extends: teekConfig,
+    ignoreDeadLinks: false,
+    srcExclude: ['superpowers/**'],
     lang: site.lang,
     title: site.title,
     titleTemplate: site.titleTemplate,
     description: site.description,
 
     base,
+    ...(process.env.DOCS_OUT_DIR ? { outDir: process.env.DOCS_OUT_DIR } : {}),
     cleanUrls,
     lastUpdated: true,
     appearance: true,
+    transformPageData(page) {
+      if (page.relativePath === 'index.md' && page.frontmatter.hero) {
+        page.frontmatter.hero.name = site.title
+        page.frontmatter.hero.text = site.tagline
+      }
+    },
 
     head: [
       ['meta', { name: 'theme-color', content: '#0E7C86' }],
@@ -99,6 +110,11 @@ export default defineConfig(() => {
         {
           text: 'AI 工具',
           items: [
+            { text: 'DSH 安装（桌面端 / CLI）', link: '/apps/dsh/' },
+            { text: 'DSH 桌面端扩展', link: '/apps/dsh/extensions' },
+            { text: 'DSH / TUI MCP 与配套', link: '/apps/dsh/mcp' },
+            { text: 'DSH-TUI 安装', link: '/apps/dsh-tui/' },
+            { text: 'DSH-TUI 扩展', link: '/apps/dsh-tui/extensions' },
             { text: 'OpenCode 安装与配置', link: '/apps/opencode/' },
             { text: 'OpenCode Skills', link: '/apps/opencode/skills' },
             { text: 'WorkBuddy 安装与配置', link: '/apps/workbuddy/' },

@@ -28,5 +28,12 @@
 
 ## AI 工具单独分组
 
-[OpenCode](/apps/opencode/) 和 [WorkBuddy](/apps/workbuddy/) 虽然是软件，
-但装完还要配模型、API Key、skills 目录，工作量比装本身大得多，所以单独开一节。
+| 工具 | 安装说明 |
+| --- | --- |
+| [DSH](/apps/dsh/) | 官方桌面端、CLI / Web，区分两种安装入口 |
+| [DSH-TUI](/apps/dsh-tui/) | 社区终端界面，Windows 安装包或 npm 安装 |
+| [OpenCode](/apps/opencode/) | 安装与配置 |
+| [WorkBuddy](/apps/workbuddy/) | 安装与配置 |
+
+这些工具装完还需要接入账号或模型，所以在侧栏单独分组。
+DSH 与 DSH-TUI 本次只补安装和启动说明；skills、MCP、其他插件及配置备份留到后续。

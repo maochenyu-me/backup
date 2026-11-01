@@ -1,7 +1,30 @@
-/* 首页用自定义 masthead，隐藏默认 hero 与 features */
-.VPHero,
-.VPFeatures {
-  display: none;
+/* 本站首页补充样式，不全局隐藏主题组件。 */
+/* 任务入口层级与就绪清单，保留首页专属作用域。 */
+.home-wrap .masthead > div:last-child {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+.home-wrap .masthead__links {
+  gap: 0.75rem;
+}
+.home-wrap .masthead__links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+}
+.home-wrap .masthead__links li:first-child a {
+  color: var(--paper);
+  background: var(--signal);
+  border-color: var(--signal);
+}
+.home-wrap .masthead__links li:first-child a:hover {
+  background: var(--signal-ink);
 }
 
 /* 首页清单序号 */

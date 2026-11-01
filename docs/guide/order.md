@@ -86,10 +86,12 @@ Windows 用 `winget`（Win11 自带，Win10 需装 App Installer）。这一步�
 <div class="timeline__head">AI 工具</div>
 <div class="timeline__body">
 
-[OpenCode](/apps/opencode/) 与 [WorkBuddy](/apps/workbuddy/) 都是装完还要配的东西：
-模型提供商、API Key、skills 目录。**配置比安装麻烦**，所以留到环境都齐了再做。
+按需安装 [DSH](/apps/dsh/)、[DSH-TUI](/apps/dsh-tui/)、[OpenCode](/apps/opencode/) 与 [WorkBuddy](/apps/workbuddy/)。
+DSH 官方桌面端自带运行时；npm CLI 与 DSH-TUI 的 npm 路线则依赖前面准备的 Node.js 和 pnpm。
+DSH-TUI 还提供自带依赖的 Windows x64 安装包，不必先装官方桌面端。
 
-两者的 skills 目录都在用户主目录下，迁移时是重点备份对象。
+装好主体后接入账号或模型，再发一条简单消息验证。DSH 和 DSH-TUI 的扩展、配置备份本次不展开；
+OpenCode 与 WorkBuddy 的已有说明仍见各自页面。
 
 </div>
 </li>
