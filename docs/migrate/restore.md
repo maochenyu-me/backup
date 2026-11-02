@@ -8,7 +8,7 @@
   <dl class="spec">
     <dt>前置</dt><dd>已完成 [备份清单](/migrate/backup)</dd>
     <dt>耗时</dt><dd>1–2 小时（含下载）</dd>
-    <dt>最近核对</dt><dd>2026-11-01</dd>
+    <dt>最近核对</dt><dd>2026-11-02</dd>
   </dl>
 </div>
 
@@ -197,6 +197,19 @@ Copy-Item "备份目录\flclash" "$env:APPDATA\com.follow\clash" -Recurse -Force
 Copy-Item "备份目录\pnpm-config.yaml" "$env:LOCALAPPDATA\pnpm\config.yaml" -Force
 pnpm config get store-dir
 ```
+
+### VS Code
+
+配置和插件一起搬，一键还原包见 [VS Code · 自用配置与插件](/apps/vscode#自用配置与插件)：
+
+```powershell
+# 解压备份包后进入 vscode-backups
+powershell -ExecutionPolicy Bypass -File restore-all.ps1 -DryRun   # 先看会动什么
+powershell -ExecutionPolicy Bypass -File restore-all.ps1           # 写配置 + 装 28 个扩展
+```
+
+还原完按包内 `config/secrets-checklist.md` 补 5 处 `__请填入__`（Comate 账号与授权、
+`ANTHROPIC_AUTH_TOKEN`、模型服务 API Key），再重启 VS Code。
 
 ## 第 7 步：验收
 

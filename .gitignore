@@ -12,3 +12,8 @@ Thumbs.db
 .env.*
 !.env.example
 .superpowers/
+
+# VS Code 备份压缩包：含原始 settings（第三方 license / API Key），只上私人网盘，不进仓库
+vscode-backup-*.zip
+vscode-backup-*.zip.sha256
+vscode-backups

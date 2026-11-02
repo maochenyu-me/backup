@@ -7,7 +7,7 @@
   <p class="filmhead__lede">每层做完再进下一层，跳步骤会在后面卡住。</p>
   <dl class="spec">
     <dt>预计耗时</dt><dd>2–4 小时（不含下载等待）</dd>
-    <dt>最近核对</dt><dd>2026-10-31</dd>
+    <dt>最近核对</dt><dd>2026-11-02</dd>
   </dl>
 </div>
 
@@ -105,10 +105,10 @@ OpenCode 与 WorkBuddy 的已有说明仍见各自页面。
 <div class="timeline__head">桌面软件</div>
 <div class="timeline__body">
 
-[Chrome](/apps/chrome)、[Steam](/apps/steam)，以及 [顺带装的那些](/apps/extras)。
+[Chrome](/apps/chrome)、[Steam](/apps/steam)、[VS Code](/apps/vscode)，以及 [顺带装的那些](/apps/extras)。
 
-这些装完就能用，不需要配置，所以放最后。Chrome 登录账号后书签和扩展会自己回来，
-不需要手动备份。
+Chrome / Steam 装完就能用，不需要配置。VS Code 要单独处理一下：它的**配置和 28 个插件**要搬，
+一键还原包见 [VS Code · 自用配置与插件](/apps/vscode#自用配置与插件)。
 
 </div>
 </li>

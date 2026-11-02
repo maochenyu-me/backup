@@ -8,7 +8,7 @@
   <dl class="spec">
     <dt>总量估计</dt><dd>约 200 MB（不含游戏和项目代码）</dd>
     <dt>耗时</dt><dd>10–20 分钟</dd>
-    <dt>最近核对</dt><dd>2026-10-31</dd>
+    <dt>最近核对</dt><dd>2026-11-02</dd>
   </dl>
 </div>
 
@@ -36,6 +36,7 @@
 | WorkBuddy skills | `~/.workbuddy/skills/` | 47 个技能 |
 | OpenCode skills | 见 [Skills 清单](/apps/opencode/skills) | 3 个目录 |
 | Chrome profile（可选） | `%LOCALAPPDATA%\Google\Chrome\User Data` | 多账号或不登录时用 |
+| VS Code 配置 | `%APPDATA%\Code\User\`（settings / keybindings / snippets / chatLanguageModels） | 插件清单另用 `code --list-extensions` 记；外传前必须脱敏，见 [VS Code](/apps/vscode#备份与还原) |
 
 ## 优先级三：项目代码
 

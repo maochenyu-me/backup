@@ -105,6 +105,7 @@ export default defineConfig(() => {
             { text: 'Chrome', link: '/apps/chrome' },
             { text: 'FlClash', link: '/apps/flclash' },
             { text: 'Steam', link: '/apps/steam' },
+            { text: 'VS Code', link: '/apps/vscode' },
             { text: '顺带装的那些', link: '/apps/extras' },
           ],
         },

@@ -3,12 +3,12 @@
 这台机器上实际装着什么。换新机时对照这张表，能看出哪里落后了、哪里需要重装。
 
 <div class="filmhead">
-  <div class="filmhead__title">本机快照 <span class="badge">2026-10-31 实测</span></div>
+  <div class="filmhead__title">本机快照 <span class="badge">2026-11-02 实测</span></div>
   <p class="filmhead__lede">所有版本号都来自命令行实际输出，不是"官网最新版"。</p>
   <dl class="spec">
     <dt>系统</dt><dd>Windows 10.0.26200 (x64)</dd>
     <dt>查看方式</dt><dd>--version 命令 / winget list</dd>
-    <dt>核对日期</dt><dd>2026-10-31</dd>
+    <dt>核对日期</dt><dd>2026-11-02</dd>
   </dl>
 </div>
 
@@ -36,6 +36,7 @@
 | 名称 | 本机版本 | 安装来源 |
 | --- | --- | --- |
 | Google Chrome | `156.0.8078.79` | 官网安装包（非 winget 装的） |
+| VS Code | `1.140.0` | 系统安装包，装在 `E:\vscode\Microsoft VS Code`（非 winget） |
 | FlClash | `0.8.99+2026100301` | `winget` (`chen08209.FlClash`) |
 | Steam | `2.10.91.91` | `winget` (`Valve.Steam`)，装在 `E:\steam` |
 | WorkBuddy | `5.9.2` | `winget` (`Tencent.WorkBuddy`) |
